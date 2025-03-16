@@ -47,7 +47,6 @@ public class ClientController implements ToolCallbackProvider {
 
     @PostMapping("/mcp/webhook")
     public String handleWebhook(@RequestBody String payload, @RequestHeader Map<String, String> headers) {
-        // Log the headers and payload for debugging
         headers.forEach((key, value) -> System.out.println(key + ": " + value));
         System.out.println("Payload: " + payload);
         return "Webhook received successfully";
@@ -64,7 +63,7 @@ public class ClientController implements ToolCallbackProvider {
                 .url("https://api.exa.ai/search")
                 .method("POST", body)
                 .addHeader("content-type", "application/json")
-                .addHeader("x-api-key", "9d9e6917-1bca-4ce7-b69d-a595abcf35bc")
+                .addHeader("x-api-key", "<token>")
                 .build();
         try {
             Response response = client.newCall(request).execute();

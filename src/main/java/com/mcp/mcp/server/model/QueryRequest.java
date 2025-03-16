@@ -10,8 +10,7 @@ public class QueryRequest {
     private String query;
     @JsonProperty("contents")
     private Contents contents;
-
-    // Getters and Setters
+    
     public String getQuery() {
         return query;
     }
